@@ -1,0 +1,8 @@
+/* Entry stylesheet — imported once from main.jsx.
+   Font order matters: Chakra Petch (display/headings) loads before
+   JetBrains Mono (body/data) since headings paint first. */
+
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@import "./global.css";
+@import "./dashboard.css";

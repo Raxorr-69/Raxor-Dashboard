@@ -1,0 +1,181 @@
+/* =========================================================
+   Raxor Dashboard — Design Tokens
+   A security-console aesthetic: dark void, one signature
+   neon (cyan) carrying brand + primary-action + focus duty,
+   with magenta/amber/green reserved strictly for functional
+   danger/warn/success states — never decoration.
+   ========================================================= */
+
+:root {
+  /* Surfaces */
+  --bg: #05070a;
+  --surface: #0b1016;
+  --surface-raised: #111820;
+  --border: #1b2530;
+  --border-bright: #2a3a48;
+
+  /* Text */
+  --text: #eaf6ff;
+  --text-muted: #5c7a8c;
+  --text-dim: #38505f;
+
+  /* Signature accent — cyan does brand + primary action + focus */
+  --accent: #00e5ff;
+  --accent-dim: #00b3cc;
+  --accent-glow: rgba(0, 229, 255, 0.35);
+
+  /* Functional status colors ONLY — never used decoratively */
+  --danger: #ff2e6c;
+  --danger-glow: rgba(255, 46, 108, 0.35);
+  --warning: #ffb100;
+  --warning-glow: rgba(255, 177, 0, 0.3);
+  --success: #39ff9e;
+  --success-glow: rgba(57, 255, 158, 0.3);
+
+  /* Type */
+  --font-display: "Chakra Petch", "Segoe UI", sans-serif;
+  --font-body: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* The signature cut-corner amount used across panels/buttons */
+  --cut: 10px;
+  --cut-sm: 6px;
+
+  --radius-control: 4px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+}
+
+/* =========================================================
+   Reset
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-2);
+  color: var(--text);
+}
+
+p {
+  margin: 0 0 var(--space-3);
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+code {
+  font-family: var(--font-body);
+  color: var(--accent);
+  background: rgba(0, 229, 255, 0.08);
+  padding: 1px 6px;
+  border-radius: var(--radius-control);
+  font-size: 0.85em;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Slim, on-theme scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
+}
+
+/* Visible keyboard focus everywhere — glow instead of a plain outline */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+/* =========================================================
+   Ambient background — a faint console glow + scanlines.
+   Fixed and very low-opacity so it reads as atmosphere, not noise.
+   ========================================================= */
+
+body {
+  background-image: radial-gradient(
+      ellipse 1200px 600px at 50% -10%,
+      rgba(0, 229, 255, 0.08),
+      transparent 60%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  background-attachment: fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

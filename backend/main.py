@@ -135,7 +135,7 @@ async def runtime_config():
     return Response(content=body, media_type="application/javascript", headers={"Cache-Control": "no-store"})
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health():
     """Simple liveness check for uptime monitoring / hosting platforms."""
 

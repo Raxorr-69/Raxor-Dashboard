@@ -24,6 +24,13 @@
   --accent-dim: #00b3cc;
   --accent-glow: rgba(0, 229, 255, 0.35);
 
+  /* Secondary cyber accent */
+  --accent-secondary: #9b5cff;
+  --accent-secondary-glow: rgba(155, 92, 255, 0.28);
+
+  /* Subtle dashboard atmosphere */
+  --surface-glass: rgba(11, 16, 22, 0.72);
+
   /* Functional status colors ONLY — never used decoratively */
   --danger: #ff2e6c;
   --danger-glow: rgba(255, 46, 108, 0.35);

@@ -101,6 +101,7 @@
   text-shadow:
     0 0 10px rgba(0, 229, 255, 0.35),
     0 0 22px rgba(0, 229, 255, 0.12);
+}
 
 .sidebar-brand::after {
   content: "";
